@@ -9,10 +9,10 @@ public class Main {
     public static int menu(){ // muestra el menú y devuelve la opción deseada introducida por teclado
         System.out.println("\nMENÚ ALUMNOS");
         System.out.println("(selecciona la opción deseada)");
-        System.out.println("1 - Introducir alumno");
-        System.out.println("2 - Introducir nota de alumno");
+        System.out.println("1 - Introducir alumno/a");
+        System.out.println("2 - Introducir nota de alumno/a");
         System.out.println("3 - Mostrar notas del curso");
-        System.out.println("4 - Mostrar alumnos por inicial");
+        System.out.println("4 - Mostrar alumnos/as por inicial");
         System.out.println("5 - Salir");
         int opcion =sc.nextInt();
         sc.nextLine();
@@ -23,22 +23,22 @@ public class Main {
         while (opcion!=5) { // mantiene el menú mientras la opción seleccionada no sea 5 - Salir
             switch (opcion) {
                 case 1: //Introducir alumno
-                    System.out.println("Nombre del alumno: ");
+                    System.out.println("Nombre del alumno/a: ");
                     String nombre = sc.nextLine();
-                    System.out.println("Dime la edad del alumno");
+                    System.out.println("Dime la edad del alumno/a");
                     int edad = sc.nextInt();
                     sc.nextLine();
                     Alumno alumno = new Alumno(nombre,edad); // crea un nuevo objeto alumno
 
                     if (curso.introducirAlumno(alumno)) // llama al método de introducción de alumnos y ejcuta el condicional según pueda introducirlo o no
-                        System.out.println("Alumno introducido en el curso");
-                    else System.out.println("No se ha podido introducir el alumno por estar el curso completo");
+                        System.out.println("Alumno/a introducido en el curso");
+                    else System.out.println("No se ha podido introducir el alumno/a por estar el curso completo");
                     break;
 
 
                     case 2: //Introducción de nota del alumno
                         double nota;
-                        System.out.println("Nombre del alumno: ");
+                        System.out.println("Nombre del alumno/a: ");
                         String name = sc.nextLine();
                         do {
                             System.out.println("Nota a introducir: ");
@@ -49,7 +49,7 @@ public class Main {
                         sc.nextLine();
                         if (curso.introducirNota(name,nota)) // llama al método de introducción de nota y ejecuta el condicional según pueda introducirla o no
                             System.out.println("Nota introducida correctamente");
-                        else System.out.println("No se ha podido introducir la nota por no existir el alumno");
+                        else System.out.println("No se ha podido introducir la nota por no existir el alumno/a");
                         break;
 
                     case 3: // muestra la información del curso
